@@ -6,19 +6,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learning.dto.OrderRequestDTO;
 import com.learning.order.entiry.Order;
+import com.learning.order.entiry.PurchaseOrder;
 import com.learning.order.service.OrderService;
 
 @RestController
+@RequestMapping("/order")
 public class OrderController {
 
 	@Autowired
 	private OrderService service;
 	
-	@PostMapping("/order/save")
+	@PostMapping("/save")
 	public ResponseEntity<Order> saveOrder(@RequestBody Order order){
 		order=service.saveOrder(order);
 		return new ResponseEntity<Order>(order, HttpStatus.OK);
@@ -26,9 +30,15 @@ public class OrderController {
 	
 	
 	
-	@GetMapping("/order/getById")
+	@GetMapping("/getById")
 	public ResponseEntity<Order> getOrderById(@RequestParam Integer id){
 		Order order=service.getOrderById(id);
 		return new ResponseEntity<Order>(order, HttpStatus.OK);
+	}
+	
+	@PostMapping("/create")
+	public ResponseEntity<PurchaseOrder> createOrder(@RequestBody OrderRequestDTO dto) {
+		PurchaseOrder purchaseOrder=service.createOrder(dto);
+		return new ResponseEntity<PurchaseOrder>(purchaseOrder, HttpStatus.OK);
 	}
 }
