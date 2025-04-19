@@ -6,8 +6,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor	
+@NoArgsConstructor
 public class OrderRequestDTO {
+	
 	private Integer userId;
 	private Integer productId;
 	private Integer orderId;

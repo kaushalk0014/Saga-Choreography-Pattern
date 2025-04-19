@@ -10,7 +10,7 @@ import com.learning.dto.OrderRequestDTO;
 public class OrderEvent implements Event{
 
 	private UUID eventId=UUID.randomUUID();
-	private Date dataDate=new Date();
+	private Date eventDate=new Date();
 	private OrderRequestDTO orderRequestDTO;
 	private OrderStatus orderStatus;
 	
@@ -21,6 +21,15 @@ public class OrderEvent implements Event{
 	
 	@Override
 	public Date getDate() {
-		return dataDate;
+		return eventDate;
+	}
+	
+	public OrderEvent() {
+	}
+
+	public OrderEvent(OrderRequestDTO orderRequestDTO, OrderStatus orderStatus) {
+		super();
+		this.orderRequestDTO = orderRequestDTO;
+		this.orderStatus = orderStatus;
 	}
 }

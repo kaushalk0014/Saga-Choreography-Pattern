@@ -1,2 +1,9 @@
-com\learning\dto\OrderResponseDTO.class
+com\learning\dto\PaymentRequestDTO.class
+com\learning\event\OrderEvent.class
+com\learning\dto\PaymentResponseDTO.class
+com\learning\event\Event.class
+com\learning\event\PaymentEvent.class
+com\learning\event\OrderStatus.class
 com\learning\dto\OrderRequestDTO.class
+com\learning\dto\OrderResponseDTO.class
+com\learning\event\PaymentStatus.class
