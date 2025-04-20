@@ -41,9 +41,9 @@ public class OrderService {
 		return order;
 	}
 	
-//	public List<PurchaseOrder> getAllOrder(){
-//		
-//	}
+	public List<PurchaseOrder> getAllOrders(){
+		return purchaseOrderRepositry.findAll();
+	}
 	
 	private PurchaseOrder converDtoToEntiry(OrderRequestDTO dto) {
 		PurchaseOrder purchaseOrder=new PurchaseOrder();

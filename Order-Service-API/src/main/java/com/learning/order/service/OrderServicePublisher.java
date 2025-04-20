@@ -17,6 +17,6 @@ public class OrderServicePublisher {
 	
 	public void publisherOrderEvent(OrderRequestDTO dto, OrderStatus orderStatus) {
 		OrderEvent orderEvent=new OrderEvent(dto, orderStatus);
-		
+		orderSinks.tryEmitNext(orderEvent);
 	}
 }

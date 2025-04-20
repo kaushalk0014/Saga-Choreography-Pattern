@@ -1,5 +1,7 @@
 package com.learning.order.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,5 +42,11 @@ public class OrderController {
 	public ResponseEntity<PurchaseOrder> createOrder(@RequestBody OrderRequestDTO dto) {
 		PurchaseOrder purchaseOrder=service.createOrder(dto);
 		return new ResponseEntity<PurchaseOrder>(purchaseOrder, HttpStatus.OK);
+	}
+	
+	@GetMapping("getAll")
+	public ResponseEntity<List<PurchaseOrder>> getOrders(){
+		List <PurchaseOrder> list= service.getAllOrders();
+		return new ResponseEntity<List<PurchaseOrder>>(list, HttpStatus.OK);
 	}
 }
