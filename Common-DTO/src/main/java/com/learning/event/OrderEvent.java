@@ -7,6 +7,9 @@ import java.util.UUID;
 
 import com.learning.dto.OrderRequestDTO;
 
+import lombok.Data;
+
+@Data
 public class OrderEvent implements Event{
 
 	private UUID eventId=UUID.randomUUID();

@@ -3,8 +3,12 @@ package com.learning.event;
 import java.util.Date;
 import java.util.UUID;
 
+import com.learning.dto.OrderRequestDTO;
 import com.learning.dto.PaymentRequestDTO;
 
+import lombok.Data;
+
+@Data
 public class PaymentEvent implements Event{
 
 	private UUID eventId=UUID.randomUUID();
